@@ -27,6 +27,9 @@ const ok = (name, cond) => {
   ok("7 module mastery rows", await page.locator(".mods .modrow").count() === 7);
   ok("3 readiness estimates", await page.locator(".readiness .stat").count() === 3);
   ok("mobile bottom nav visible", await page.locator("#bottomnav").isVisible());
+  ok("sync connect UI present", await page.locator("#syncui #syncconnect").count() === 1);
+  await page.click("#syncconnect"); await page.waitForTimeout(50);
+  ok("sync connect validates empty token", (await page.locator("#syncui .syncmsg").innerText()).includes("Paste a token"));
 
   // modules list + module page
   await page.goto(url + "#/modules"); await page.waitForTimeout(150);

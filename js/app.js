@@ -313,7 +313,8 @@ views.dashboard = () => {
     '<div class="card" style="margin-top:14px"><h2>Module mastery</h2><div class="mods"></div></div>' +
     '<div class="card"><h2>Readiness estimates</h2><p class="muted">Driven by quiz mastery, scenario performance, and interview-tagged flashcards. Treat as a study compass, not a guarantee.</p><div class="readiness"></div></div>' +
     '<div class="card weak"><h2>Weakest topics</h2></div>' +
-    '<div class="card"><h2>Progress data</h2><p class="muted">Progress lives in this browser\'s localStorage. Export a JSON backup if you switch devices.</p>' +
+    '<div class="card"><h2>Sync & progress data</h2><div id="syncui"></div>' +
+    '<p class="muted">Progress lives in this browser\'s localStorage. Export a JSON backup any time.</p>' +
     '<div class="row"><button class="btn" id="exp">⬇ Export JSON</button><button class="btn" id="imp">⬆ Import JSON</button><button class="btn" id="rst">Reset progress</button></div></div>' +
     "</div>"
   );
@@ -343,6 +344,7 @@ views.dashboard = () => {
     ));
   });
 
+  if (window.OTSYNC) window.OTSYNC.renderUI(frag.querySelector("#syncui"));
   frag.querySelector("#exp").onclick = () => {
     const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
     const a = document.createElement("a");

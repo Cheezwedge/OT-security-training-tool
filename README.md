@@ -24,7 +24,28 @@ python3 -m http.server 8080
 # then visit http://localhost:8080  (or http://<your-pc-ip>:8080 from your phone)
 ```
 
-> Progress is per-browser. Use Dashboard → Export JSON to back up or move devices.
+> Progress is per-browser by default. Use Dashboard → Export JSON for manual backups,
+> or set up cross-device sync (below).
+
+## Cross-device sync ("login")
+
+The app can sync progress across devices through a **private GitHub Gist** — no
+backend needed. Setup (once per device):
+
+1. Create a token at <https://github.com/settings/personal-access-tokens/new>
+   — give it ONLY the **Gists: read and write** account permission (set a long expiry).
+2. On the Dashboard → **Sync & progress data**, paste the token and hit Connect.
+3. Repeat on each device with the same token. The first device creates the Gist;
+   the rest find and merge into it.
+
+Sync runs on app load, every 45 s while studying, and when you leave the tab.
+Merging is per-item: the device that practiced a question/card most recently wins,
+lesson reads and streak days are unioned, scenario best-scores keep the max — so
+studying on two devices the same day loses nothing.
+
+Notes: the token is stored in each device's localStorage, so only use a
+gists-only token. Secret Gists are unlisted but technically readable by anyone
+who has their URL — fine for study progress; don't put anything sensitive in it.
 
 ## What's inside
 
