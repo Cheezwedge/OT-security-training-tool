@@ -6,11 +6,17 @@ Progress persists to your browser's localStorage (export/import JSON from the Da
 
 ## Launch
 
-**Option A — just open it (works offline):**
+**Option A — phone/anywhere via GitHub Pages:**
+once the repo is public and Pages is deployed, open
+`https://cheezwedge.github.io/OT-security-training-tool/` and add it to your
+phone's home screen. (Deploys automatically from `main` via
+`.github/workflows/pages.yml`.)
+
+**Option B — just open it locally (works offline):**
 double-click `index.html` or open it with your browser (`file://` works; all data
 loads via plain `<script>` tags, so no CORS issues).
 
-**Option B — local server (nicer URLs, works great on your phone over Wi-Fi):**
+**Option C — local server (phone over home Wi-Fi, no hosting):**
 
 ```bash
 cd OT-security-training-tool
