@@ -6,11 +6,10 @@ Progress persists to your browser's localStorage (export/import JSON from the Da
 
 ## Launch
 
-**Option A — phone/anywhere via GitHub Pages:**
-once the repo is public and Pages is deployed, open
-`https://cheezwedge.github.io/OT-security-training-tool/` and add it to your
-phone's home screen. (Deploys automatically from `main` via
-`.github/workflows/pages.yml`.)
+**Option A — the live site (phone/anywhere):**
+open **<https://cheezwedge.github.io/OT-security-training-tool/>** and add it to
+your phone's home screen. Deploys automatically from `main` via
+`.github/workflows/pages.yml`.
 
 **Option B — just open it locally (works offline):**
 double-click `index.html` or open it with your browser (`file://` works; all data
@@ -55,7 +54,7 @@ who has their URL — fine for study progress; don't put anything sensitive in i
 | Spaced-repetition quiz engine (Leitner boxes, wrong answers resurface) | **Review** |
 | 10 tabletop scenarios (technical + leadership) | **Scenarios** |
 | 90 flashcards incl. `interview-prep` deck | **Cards** |
-| 75-term searchable glossary with controls-background bridge notes | **Glossary** |
+| 82-term searchable glossary with controls-background bridge notes | **Glossary** |
 | Mastery %, streak, weakest topics, IC32/GICSP/interview readiness | **Dashboard** |
 | Daily 15: flashcards → lesson → quiz in ~15 min | **Daily 15** |
 
